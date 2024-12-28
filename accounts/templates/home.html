@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h2>Welcome to the Home Page</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="recipient">Recipient Email:</label>
+        <input type="email" name="recipient" id="recipient" required>
+        <br><br>
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" required></textarea>
+        <br><br>
+        <button type="submit">Send Mail</button>
+    </form>
+    {% if success %}
+        <p style="color: green;">{{ success }}</p>
+    {% endif %}
+</body>
+</html>
